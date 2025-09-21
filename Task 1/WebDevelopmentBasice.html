@@ -5,296 +5,288 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development Basics</title>
     <style>
-        /* CSS Reset */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
         
-        /* Global Styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: #f0f7ff;
             color: #333;
-            background-color: #f8f9fa;
+            line-height: 1.6;
             padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
         }
         
-        /* Header Styles */
         header {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: white;
             text-align: center;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            background-color: #4a8eff;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 25px;
         }
         
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: #fff;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: #6e8efb;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #a777e3;
-        }
-        
-        /* Content Sections */
-        section {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
         }
         
         h2 {
-            color: #6e8efb;
-            margin-bottom: 1rem;
-            border-bottom: 2px solid #f0f0f0;
-            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+            color: #2c6ed4;
+            margin: 20px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #c5e1ff;
+        }
+        
+        h3 {
+            font-size: 1.4rem;
+            color: #4a8eff;
+            margin: 15px 0 10px;
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
         
-        /* Image Styles */
-        .image-container {
-            text-align: center;
-            margin: 1.5rem 0;
-        }
-        
-        .web-image {
-            max-width: 100%;
-            height: auto;
+        .section {
+            background-color: white;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
         
-        /* Button Styles */
-        .btn-container {
-            text-align: center;
-            margin: 2rem 0;
-        }
-        
-        .alert-btn {
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            font-weight: 600;
-        }
-        
-        .alert-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        /* Card Layout */
-        .card-container {
+        .example-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            margin: 2rem 0;
+            margin: 20px 0;
         }
         
-        .card {
-            flex: 1 1 300px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
+        .example {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f8fbff;
+            padding: 15px;
+            border: 1px solid #c5e1ff;
+            border-radius: 6px;
         }
         
-        .card:hover {
-            transform: translateY(-5px);
+        .code {
+            background-color: #2d2d2d;
+            color: #fff;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.4;
         }
         
-        .card-content {
-            padding: 1.5rem;
+        .interaction-area {
+            text-align: center;
+            padding: 25px;
+            background-color: #e6f2ff;
+            border-radius: 8px;
+            margin: 20px 0;
         }
         
-        .card h3 {
-            color: #6e8efb;
-            margin-bottom: 0.5rem;
+        button {
+            background-color: #4a8eff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
         }
         
-        /* Footer */
+        button:hover {
+            background-color: #2c6ed4;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
         footer {
             text-align: center;
-            padding: 2rem;
-            background-color: #343a40;
-            color: white;
-            border-radius: 10px;
-            margin-top: 2rem;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
         }
         
+        @media (max-width: 768px) {
+            .example-container {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Web Development Basics</h1>
-            <p>Learning HTML, CSS, and JavaScript Fundamentals</p>
-        </header>
+    <header>
+        <h1>Web Development Basics</h1>
+        <p>Learn HTML, CSS, and JavaScript fundamentals</p>
+    </header>
+    
+    <div class="section">
+        <h2>1. HTML - The Structure of Web Pages</h2>
+        <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page using elements and tags.</p>
         
-        <nav>
-            <ul>
-                <li><a href="#html">HTML</a></li>
-                <li><a href="#css">CSS</a></li>
-                <li><a href="#js">JavaScript</a></li>
-                <li><a href="#resources">Resources</a></li>
-            </ul>
-        </nav>
-        
-        <section id="html">
-            <h2>HTML: The Structure of Web Pages</h2>
-            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It describes the structure of a web page and consists of a series of elements that tell the browser how to display content.</p>
-            
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="HTML code example" class="web-image">
+        <div class="example-container">
+            <div class="example">
+                <h3>Basic HTML Elements</h3>
+                <ul>
+                    <li><strong>&lt;h1&gt; to &lt;h6&gt;</strong> - Headings</li>
+                    <li><strong>&lt;p&gt;</strong> - Paragraphs</li>
+                    <li><strong>&lt;a&gt;</strong> - Links</li>
+                    <li><strong>&lt;img&gt;</strong> - Images</li>
+                    <li><strong>&lt;div&gt;</strong> - Content division</li>
+                    <li><strong>&lt;button&gt;</strong> - Clickable button</li>
+                </ul>
             </div>
             
-            <p>Basic HTML elements include:</p>
-            <ul>
-                <li><strong>Headings</strong> (&lt;h1&gt; to &lt;h6&gt;) for titles and section headings</li>
-                <li><strong>Paragraphs</strong> (&lt;p&gt;) for text content</li>
-                <li><strong>Images</strong> (&lt;img&gt;) to display pictures</li>
-                <li><strong>Links</strong> (&lt;a&gt;) to connect to other pages</li>
-                <li><strong>Lists</strong> (&lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;) for item collections</li>
-            </ul>
-        </section>
-        
-        <section id="css">
-            <h2>CSS: Styling Web Pages</h2>
-            <p>CSS (Cascading Style Sheets) is used to style and layout web pages. It allows you to control colors, fonts, spacing, and positioning of HTML elements.</p>
-            
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="CSS code example" class="web-image">
-            </div>
-            
-            <p>With CSS you can:</p>
-            <ul>
-                <li>Set colors for text and backgrounds</li>
-                <li>Choose and customize fonts</li>
-                <li>Create responsive layouts for different screen sizes</li>
-                <li>Add animations and transitions</li>
-                <li>Create visually appealing designs</li>
-            </ul>
-        </section>
-        
-        <section id="js">
-            <h2>JavaScript: Adding Interactivity</h2>
-            <p>JavaScript is a programming language that enables interactive web pages. It's a core technology of the web alongside HTML and CSS.</p>
-            
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="JavaScript code example" class="web-image">
-            </div>
-            
-            <p>JavaScript allows you to:</p>
-            <ul>
-                <li>Respond to user actions (clicks, form submissions, etc.)</li>
-                <li>Dynamically update content without reloading the page</li>
-                <li>Create animations and visual effects</li>
-                <li>Validate form data</li>
-                <li>Fetch data from servers</li>
-            </ul>
-            
-            <div class="btn-container">
-                <button class="alert-btn" onclick="showAlert()">Click Me to See JavaScript in Action!</button>
-            </div>
-        </section>
-        
-        <section id="resources">
-            <h2>Web Development Resources</h2>
-            <p>Here are some useful resources to continue learning web development:</p>
-            
-            <div class="card-container">
-                <div class="card">
-                    <div class="card-content">
-                        <h3>HTML Resources</h3>
-                        <p>Learn more about HTML:</p>
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Documentation</a></li>
-                            <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML Tutorial</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h3>CSS Resources</h3>
-                        <p>Learn more about CSS:</p>
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Documentation</a></li>
-                            <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <div class="card-content">
-                        <h3>JavaScript Resources</h3>
-                        <p>Learn more about JavaScript:</p>
-                        <ul>
-                            <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN JavaScript Documentation</a></li>
-                            <li><a href="https://javascript.info/" target="_blank">Modern JavaScript Tutorial</a></li>
-                        </ul>
-                    </div>
+            <div class="example">
+                <h3>Simple HTML Example</h3>
+                <div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    &lt;a href="https://example.com"&gt;Visit Example.com&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
                 </div>
             </div>
-        </section>
-        
-        <footer>
-            <p>Created as part of Web Development Basics Task | 2023</p>
-        </footer>
+        </div>
     </div>
+    
+    <div class="section">
+        <h2>2. CSS - Styling Web Pages</h2>
+        <p>CSS (Cascading Style Sheets) is used to style and layout web pages. It lets you change colors, fonts, spacing, and more.</p>
+        
+        <div class="example-container">
+            <div class="example">
+                <h3>Common CSS Properties</h3>
+                <ul>
+                    <li><strong>color</strong> - Text color</li>
+                    <li><strong>background-color</strong> - Background color</li>
+                    <li><strong>font-family</strong> - Text font</li>
+                    <li><strong>padding</strong> - Space inside element</li>
+                    <li><strong>margin</strong> - Space outside element</li>
+                    <li><strong>border</strong> - Element border</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Simple CSS Example</h3>
+                <div class="code">
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: navy;
+    text-align: center;
+}
+
+.button {
+    background-color: #4a8eff;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>3. JavaScript - Adding Interactivity</h2>
+        <p>JavaScript is a programming language that makes web pages interactive. It can respond to user actions, modify content, and much more.</p>
+        
+        <div class="example-container">
+            <div class="example">
+                <h3>What JavaScript Can Do</h3>
+                <ul>
+                    <li>Change HTML content</li>
+                    <li>Change HTML attributes</li>
+                    <li>Change CSS styles</li>
+                    <li>Respond to user events</li>
+                    <li>Show alert messages</li>
+                    <li>Validate form input</li>
+                </ul>
+            </div>
+            
+            <div class="example">
+                <h3>Simple JavaScript Example</h3>
+                <div class="code">
+// Display alert when button is clicked
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("Button was clicked!");
+});
+
+// Change text when page loads
+window.onload = function() {
+    document.getElementById("welcome").innerHTML = "Welcome!";
+};
+                </div>
+            </div>
+        </div>
+        
+        <div class="interaction-area">
+            <h3>Try It Out!</h3>
+            <p>Click the button below to see JavaScript in action:</p>
+            <button id="alertButton">Click Me!</button>
+            <p id="message">This text will change when you click the button.</p>
+            <button id="changeTextButton">Change Text</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Created for learning web development basics | HTML, CSS, JavaScript</p>
+    </footer>
 
     <script>
-        // JavaScript function to show an alert
-        function showAlert() {
-            alert("Congratulations! You've just triggered a JavaScript function. This is how we add interactivity to web pages.");
-        }
+        // JavaScript for interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Alert button functionality
+            const alertButton = document.getElementById('alertButton');
+            alertButton.addEventListener('click', function() {
+                alert('Hello! This is a JavaScript alert.\nYou have successfully implemented interactivity!');
+            });
+            
+            // Change text button functionality
+            const changeTextButton = document.getElementById('changeTextButton');
+            const message = document.getElementById('message');
+            changeTextButton.addEventListener('click', function() {
+                message.innerHTML = "You changed this text with JavaScript! Great job!";
+                message.style.color = "#2c6ed4";
+                message.style.fontWeight = "bold";
+            });
+        });
     </script>
 </body>
 </html>
